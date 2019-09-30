@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <script src="scripts/jquery-3.4.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/db9af42d68.js"></script>
+    <title>The Locket</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="top-bar">
+        <a href="#" class="logo">The Locket</a>
+        <input type="checkbox" class="toggle" id="checkbox">
+        <nav class="nav">
+          <div class="list">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#reservations">Reservations</a></li>
+              <li><a href="#menus">Menus</a></li>
+              <li><a href="#team">Meet the team</a></li>
+              <li><a href="#find-us">Where to find us</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+            <h2>Menus</h2>
+            <ul>
+              <li><a href="#">À la Carte</a></li>
+              <li><a href="#">Set Lunch Menu</a></li>
+              <li><a href="#">Wine List</a></li>
+            </ul>
+          </div>
+        </nav>
+        <label for="checkbox" class="nav-toggle">
+          <div class="hamburger"><div></div></div>
+        </label>
+      </div>
+    </header>
+    <main>
+      <div class="showcase"></div>
+      <div class="reservations-container" id="reservations">
+        <div class="reservations">
+          <img class="openTable" src="imgs/openTable.png" alt="Image of reservations link">
+          <p class="openTable-text">Example of the OpenTable reservation system</p>
+        </div>
+      </div>
+      <div class="menu-container" id="menus">
+        <div class="card title-card">
+          <h3>Menus</h3>
+        </div>
+        <div class="card menu-card" id="carte">
+          <a href="#">
+            <img src="imgs/beef.jpg" alt="Beef with tomato and asparagus">
+            <h3>À la Carte</h3>
+          </a>
+        </div>
+        <div class="card menu-card" id="set-menu">
+          <a href="#">
+            <img src="imgs/cake.jpeg" alt="Beef with tomato and asparagus">
+            <h3>Set Menu</h3>
+          </a>
+        </div>
+        <div class="card menu-card" id="wine-list">
+          <a href="#">
+            <img src="imgs/wine.jpeg" alt="Beef with tomato and asparagus">
+            <h3>Wine List</h3>
+          </a>
+        </div>
+      </div>
+      <h2 class="section-headers" id="team">The Team</h2>
+      <div class="team-container">
+        <img src="imgs/chef.jpg" alt="Executive chef of The Locket" class="chef">
+        <div class="intro">
+          <h3>Antonio Dominico | Executive Chef</h3>
+          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        </div>
+        <img src="imgs/scallop.jpg" alt="Scallop dish with tomato and pesto" class="team-food">
+        <div class="intro team-intro">
+          <h3>The Locket Family</h3>
+          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.""Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+        </div>
+      </div>
+      <h2 class="section-headers" id="find-us">Where to find us</h2>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2347.5134272906826!2d-1.0871516989012333!3d53.9581497881436!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487931a84620a44b%3A0xe005441a3d881d94!2sNorth+St%2C+York!5e0!3m2!1sen!2suk!4v1563372983172!5m2!1sen!2suk" height="450" frameborder="0" style="border:0" allowfullscreen class="maps"></iframe>
+      <div class="contact" id="contact">
+        <div class="contact-left">
+          <h3>The Locket</h3>
+          <p>21 North Street <br>York <br>YO1 6JD</p>
+          <p>+44 (0) 1904 123456</p>
+          <p>reservations@thelocket.com</p>
+          <br>
+          <br>
+          <p><span>Careers: </span>careers@thelocket.com</p>
+        </div>
+        <div class="contact-right">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#reservations">Reservations</a></li>
+            <li><a href="#menus">Menus</a></li>
+            <li><a href="#team">Meet the team</a></li>
+            <li><a href="#find-us">Where to find us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <br>
+          <br>
+          <div class="social">
+            <a href="https://www.facebook.com" target="_blank" class="fab fa-facebook"></a>
+            <a href="https://www.twitter.com" target="_blank" class="fab fa-twitter"></a>
+            <a href="https://www.instagram.com" target="_blank" class="fab fa-instagram"></a>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

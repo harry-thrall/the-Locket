@@ -1,0 +1,553 @@
+@import url('https://fonts.googleapis.com/css?family=Catamaran|Lora|Open+Sans|Montserrat|Dancing+Script');
+
+:root {
+    --header: rgba(199, 199, 199, 0.7);
+}
+
+/* Base setup */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  background-color: #eee;
+  color: #1e1e1e;
+  font-family: 'Montserrat';
+}
+
+.active {
+  background-color: var(--header);
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+/* Header setup */
+
+.header {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+  transition: all 0.5s ease-in-out;
+}
+
+.top-bar{
+  position: relative;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  font-size: 3rem;
+  font-variant: small-caps;
+  color: #1e1e1e;
+  margin-left: 1.5rem;
+}
+
+nav {
+  position: absolute;
+  text-align: center;
+  top: 0;
+  background-color: var(--header);
+  width: 100%;
+  height: 100vh;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 0.4s ease-in-out;
+}
+
+nav li {
+  font-size: 1.6rem;
+  margin: 0.5rem 0;
+  list-style: none;
+}
+
+nav h2 {
+  margin: 25px 0 10px;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+
+nav li a{
+  color: #1e1e1e;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+
+nav li a:hover{
+  text-decoration: underline;
+}
+
+.list {
+  position: relative;
+  top: 25%;
+}
+
+.list h2{
+  font-family: 'Dancing Script';
+  font-size: 2.5rem;
+}
+
+.nav-toggle {
+  position: absolute;
+  height: 65px;
+  width: 65px;
+  right: 1rem;
+}
+
+.toggle {
+  display: none;
+}
+
+/* Display the hamburger menu bars (including top and bottom) */
+
+.hamburger {
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.7rem;
+}
+
+.hamburger > div {
+  position: relative;
+  height: 5px;
+  width: 100%;
+  background: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.hamburger > div::before, .hamburger > div::after {
+  content: '';
+  position: absolute;
+  top: -12px;
+  height: 5px;
+  width: 100%;
+  background: #1e1e1e;
+  transition: all 0.4s ease;
+}
+
+.hamburger > div::after {
+  top: 12px;
+}
+
+/* Effects when the checkbox gets checked
+      Make menu appear
+      Change button shape from burger to X*/
+
+.toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.toggle:checked ~ nav h2 {
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out 0.2s;
+}
+
+.toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 0.4s ease-in-out 0.2s;
+}
+
+.toggle:checked ~ label > div > div{
+  background: rgba(255, 255, 255, 0);
+}
+
+.toggle:checked ~ label > div > div::before{
+  transform: translateY(12px) rotate(135deg);
+}
+
+.toggle:checked ~ label > div > div::after{
+  transform: translateY(-12px) rotate(-135deg);
+}
+
+/* Showcase starts */
+
+.showcase {
+  background-image: url(imgs/banner.jpeg);
+  opacity: 0.8;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.showcase a:hover {
+  color: #e3e3e3;
+}
+
+/* Main content starts */
+.reservations-container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.reservations {
+  position: relative;
+  margin: 2rem 1rem;
+}
+
+.openTable {
+  max-height: 122px;
+  max-width: 90%;
+  display: block;
+  margin-left: 10%;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.openTable-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.3rem;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.reservations:hover .openTable {
+  opacity: 0.5;
+}
+
+.reservations:hover .openTable-text {
+  opacity: 1;
+}
+
+/* Menu styling */
+  .menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .card {
+    position: relative;
+    background: rgba(30, 30, 30, 0.8);
+    margin: 10px 0;
+  }
+
+  .card img {
+    max-width: 100%;
+    display: block;
+    opacity: 0.7;
+    z-index: -1;
+  }
+
+  .card h3 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+    font-size: 1.8rem;
+    font-family: 'Dancing Script';
+  }
+
+  .card.title-card h3 {
+    color: #1e1e1e;
+    font-size: 2.2rem;
+    padding-bottom: 20px;
+  }
+
+  .card.menu-card a::before, .card.menu-card a::after {
+    content: '';
+    position: absolute;
+    top: 1.25em;
+    bottom: 1.25em;
+    left: 1.25em;
+    right: 1.25em;
+    opacity: 1;
+  }
+
+  .card.menu-card a::after {
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+    transform: scale(1,1);
+  }
+
+  /* Meet the team section styling */
+  .section-headers {
+    font-family: 'Dancing Script';
+    font-size: 3rem;
+    text-align: center;
+    margin: 1.2rem;
+    border-bottom: 2px solid black;
+  }
+
+  .team-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .team-container img {
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .intro h3 {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+  }
+
+  .intro p {
+    font-size: 1.2rem;
+    padding: 2rem;
+  }
+
+  .maps {
+    width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0 10%;
+    margin-bottom: 2rem;
+  }
+
+  .contact-left h3 {
+    font-size: 1.2rem;
+    font-variant: small-caps;
+    margin-bottom: 1rem;
+  }
+
+  .contact-left p {
+    font-size: 0.8rem;
+    font-variant: small-caps;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-left p span {
+    font-weight: bold;
+  }
+
+  .contact-right ul {
+    list-style: none;
+  }
+
+  .contact-right ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-right ul li a {
+      font-size: 0.8rem;
+      font-variant: small-caps;
+      color: #1e1e1e;
+  }
+
+  .contact-right ul a:hover {
+    text-decoration: underline;
+  }
+
+  .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social a {
+    font-size: 0.8rem;
+    color: #1e1e1e;
+    margin: 0 0.5rem;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .menu-container {
+      display: grid;
+      grid-template-columns: auto auto;
+      grid-auto-rows: 1fr 1fr;
+      grid-gap: 2rem 1rem;
+    }
+
+    .card {
+      margin: 0;
+    }
+
+    .card img{
+      opacity: 1;
+    }
+
+    .card.title-card {
+      min-width: 600px;
+      min-height: 400px;
+      grid-column: 1;
+      grid-row-start: 1;
+    }
+
+    #carte {
+      grid-column: 2;
+      grid-row-start: 1;
+    }
+
+    #set-menu {
+      grid-column: 1;
+      grid-row-start: 2;
+    }
+
+    #wine-list {
+      grid-column: 2;
+      grid-row-start: 2;
+    }
+
+    /* Title card with border */
+
+    .card.title-card h3 {
+      font-size: 3rem;
+      font-family: 'Dancing Script';
+      color: white;
+    }
+
+    .card.title-card::before, .card.title-card::after {
+      content: '';
+      position: absolute;
+      top: 1.25em;
+      bottom: 1.25em;
+      left: 1.25em;
+      right: 1.25em;
+      opacity: 1;
+    }
+
+    .card.title-card::before {
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+      transform: scale(1.05,1);
+    }
+
+    .card.title-card::after {
+      border-top: none;
+      border-bottom: none;
+      border-right: 2px solid white;
+      border-left: 2px solid white;
+      transform: scale(1,1.05);
+    }
+
+    /* Menu card styling */
+
+    .card.menu-card h3 {
+      opacity: 0;
+      font-size: 2rem;
+      transition: opacity ease-out 0.25s;
+    }
+
+    .card.menu-card a::before, .card.menu-card a::after {
+      transition: transform ease-out 0.25s;
+    }
+
+    .card.menu-card a::before {
+      border-top: 2px solid white;
+      border-bottom: 2px solid white;
+      transform: scale(0,1);
+    }
+
+    .card.menu-card a::after {
+      border-top: none;
+      border-bottom: none;
+      border-right: 2px solid white;
+      border-left: 2px solid white;
+      transform: scale(1,0);
+    }
+
+    .card.menu-card a:hover::before {
+      transform: scale(1.05, 1);
+    }
+
+    .card.menu-card a:hover::after {
+      transform: scale(1, 1.05);
+    }
+
+    .card.menu-card a:hover h3 {
+      opacity: 1;
+    }
+
+    .team-container {
+      display: grid;
+      grid-template-columns: 4;
+      grid-template-rows: 3;
+      grid-gap: 0.8rem;
+      align-content: center;
+      align-items: center;
+    }
+
+    .team-container .chef {
+      grid-column: 1;
+      grid-row: 1;
+      margin-left: 1rem;
+    }
+
+    .team-container .intro {
+      grid-column: 2;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      padding: 1rem;
+    }
+
+    .team-container .intro h3 {
+      font-size: 1.3rem;
+    }
+
+    .team-container .intro p {
+      font-size: 1rem;
+    }
+
+    .team-container .team-food {
+      grid-column: 3;
+    }
+
+    .team-container .team-intro {
+      grid-column: 4;
+      grid-row-start: 1;
+      grid-row-end: 3;
+      padding: 1rem;
+      margin-right: 1rem;
+    }
+
+    /* Contact section sizing */
+    .contact {
+      padding: 0 25%;
+    }
+
+    .contact-left h3 {
+      font-size: 1.8rem;
+    }
+
+    .contact-left p {
+      font-size: 1.2rem;
+    }
+
+    .contact-right ul li a {
+        font-size: 1.2rem;
+    }
+
+    .social a {
+      font-size: 1.2rem;
+    }
+  }
