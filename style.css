@@ -23,10 +23,6 @@ body {
   font-family: 'Montserrat';
 }
 
-.active {
-  background-color: var(--header);
-}
-
 a:hover {
   cursor: pointer;
 }
@@ -38,7 +34,7 @@ a:hover {
   z-index: 1;
   width: 100%;
   margin: 0 auto;
-  transition: all 0.5s ease-in-out;
+  background-color: var(--header);
 }
 
 .top-bar{
